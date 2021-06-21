@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:valores_nutricionais/src/app/colors.dart';
+import 'package:valores_nutricionais/src/home_page/controller/controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,6 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _formKey = GlobalKey<FormState>();
+
+  HomeController controller = HomeController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         alignment: Alignment.center,
         color: colorBackgroundLight,
         child: Form(
-          key: _formKey,
+          key: controller.homeFormKey,
           child: Column(children: [
             Container(
               margin: EdgeInsets.only(top: _height * .3, left: 30),

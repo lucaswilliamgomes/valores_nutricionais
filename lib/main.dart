@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valores_nutricionais/src/home_page/view.dart';
+import 'package:valores_nutricionais/src/home_page/view/view.dart';
 
 void main() {
   runApp(MyApp());
