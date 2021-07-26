@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:valores_nutricionais/src/app/colors.dart';
-import 'package:valores_nutricionais/src/home_page/controller/controller.dart';
+import 'package:valores_nutricionais/modules/home_page/controller/controller.dart';
+import 'package:valores_nutricionais/modules/informations_page/view.dart';
+import 'package:valores_nutricionais/shared/themes/colors.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       final _width = constraints.maxWidth;
       return Container(
         alignment: Alignment.center,
-        color: colorBackgroundLight,
+        color: AppColors.colorBackgroundLight,
         child: Form(
           key: controller.homeFormKey,
           child: Column(children: [
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "ALIMENTO",
                 style: TextStyle(
-                  color: colorFont,
+                  color: AppColors.colorFont,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "QUANTIDADE EM GRAMAS",
                 style: TextStyle(
-                  color: colorFont,
+                  color: AppColors.colorFont,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
@@ -90,13 +90,18 @@ class _HomePageState extends State<HomePage> {
                   "CONTINUAR",
                   style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
-                color: colorButtomDark,
+                color: AppColors.colorButtomDark,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4)),
                 onPressed: () {
-                  setState(() {
-                    _formKey.currentState.save();
-                  });
+                  // setState(() {
+                  //   _formKey.currentState.save();
+                  // });
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              InformationsPage()));
                 },
               ),
             ),

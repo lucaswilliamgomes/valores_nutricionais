@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:valores_nutricionais/src/home_page/models/model.dart';
-import 'package:valores_nutricionais/src/home_page/models/repository.dart';
+import 'package:valores_nutricionais/modules/home_page/models/model.dart';
+import 'package:valores_nutricionais/modules/home_page/models/repository.dart';
 
 class HomeController {
   final homeFormKey = GlobalKey<FormState>();
@@ -11,11 +11,11 @@ class HomeController {
   searchWeight(double weight) => model.weight = weight;
 
   Future<bool> search() async {
-    if (!homeFormKey.currentState.validate()) {
+    if (!homeFormKey.currentState!.validate()) {
       return false;
     }
 
-    homeFormKey.currentState.save();
+    homeFormKey.currentState!.save();
 
     try {
       return await repository.search(model);

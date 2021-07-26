@@ -1,4 +1,4 @@
-import 'package:valores_nutricionais/src/home_page/models/model.dart';
+import 'package:valores_nutricionais/modules/home_page/models/model.dart';
 
 class SearchInformations {
   // API connection
