@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valores_nutricionais/modules/informations_page/controller.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 import 'package:valores_nutricionais/shared/widgets/list_tile_widget.dart';
@@ -33,16 +34,66 @@ class _InformationsPageState extends State<InformationsPage> {
                   style: TextStyles.title,
                 ),
               ),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
-              ListTileWidget(),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
+              ListTileWidget(
+                  description: "Proteinas",
+                  baseQty: 100,
+                  baseUnit: "g",
+                  resultQty: 20,
+                  resultUnit: "g"),
             ],
           ),
         ),
