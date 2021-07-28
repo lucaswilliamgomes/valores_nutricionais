@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:valores_nutricionais/modules/home_page/controller/controller.dart';
-import 'package:valores_nutricionais/modules/informations_page/controller.dart';
-import 'package:valores_nutricionais/modules/informations_page/view.dart';
+import 'package:valores_nutricionais/modules/informations_page/controllers/informations_controller.dart';
+import 'package:valores_nutricionais/modules/informations_page/views/informations_view.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -98,8 +98,8 @@ class _HomePageState extends State<HomePage> {
                     setState(() {
                  
                       if (controller.homeFormKey.currentState!.validate()) {
-                        final infoController = InformationsController();
-                        infoController.teste();
+                        //final infoController = InformationsController();
+                        //infoController.teste();
                         controller.homeFormKey.currentState!.save();
                         Navigator.push(
                             context,
