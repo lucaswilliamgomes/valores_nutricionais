@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valores_nutricionais/modules/informations_page/controllers/informations_controller.dart';
+import 'package:valores_nutricionais/modules/informations_page/views/list_attributes.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 import 'package:valores_nutricionais/shared/widgets/list_tile_widget.dart';
@@ -25,25 +26,22 @@ class _InformationsPageState extends State<InformationsPage> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
       color: AppColors.colorBackgroundLight,
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(left: 15),
-              alignment: Alignment.topLeft,
-              child: Text(
-                "${controller.informations!['description']}",
-                style: TextStyles.title,
-              ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(left: 15, bottom: 15),
+            alignment: Alignment.topLeft,
+            child: Text(
+              "${controller.informations!['description']}",
+              style: TextStyles.title,
             ),
-            ListTileWidget(
-                description: "Proteinas",
-                baseQty: 100,
-                baseUnit: "g",
-                resultQty: 20,
-                resultUnit: "g"),
-          ],
-        ),
+          ),
+          Flexible(
+            child: ListAttributes(
+              attributes: controller.informations!['attributes'],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -91,12 +89,10 @@ class _InformationsPageState extends State<InformationsPage> {
           ),
         ),
         body: ValueListenableBuilder(
-          valueListenable: controller.state, 
-          builder: (BuildContext context, value, Widget? child) { 
+          valueListenable: controller.state,
+          builder: (BuildContext context, value, Widget? child) {
             return stateManager(controller.state.value);
-          }, 
-        )
-    );
-        
+          },
+        ));
   }
 }

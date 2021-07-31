@@ -3,9 +3,9 @@ import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 
 class ListTileWidget extends StatelessWidget {
   final String description;
-  final double baseQty;
+  final String baseQty;
   final String baseUnit;
-  final double resultQty;
+  final String resultQty;
   final String resultUnit;
 
   const ListTileWidget({
