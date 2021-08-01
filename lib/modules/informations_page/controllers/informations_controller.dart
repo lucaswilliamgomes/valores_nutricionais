@@ -19,7 +19,7 @@ class InformationsController {
   Future start() async {
     state.value = InfoState.loading;
     try {
-      informations = await getFoodInformations(76);
+      informations = await getFoodInformations(1);
       state.value = InfoState.sucess;
     } catch (e) {
       state.value = InfoState.error;

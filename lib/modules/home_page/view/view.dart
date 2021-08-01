@@ -4,6 +4,7 @@ import 'package:valores_nutricionais/modules/home_page/controller/controller.dar
 import 'package:valores_nutricionais/modules/informations_page/controllers/informations_controller.dart';
 import 'package:valores_nutricionais/modules/informations_page/views/informations_view.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
+import 'package:valores_nutricionais/shared/widgets/dropdownButton%20_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,23 +37,24 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-                child: TextFormField(
-                  textAlignVertical: TextAlignVertical.top,
-                  textAlign: TextAlign.left,
-                  decoration: InputDecoration(
-                    fillColor: Color.fromRGBO(242, 242, 242, 1),
-                    filled: true,
-                    hintText: "Arroz",
-                    contentPadding: EdgeInsets.only(left: 20, right: 20),
-                    border: UnderlineInputBorder(
-                        borderRadius: BorderRadius.circular(4),
-                        borderSide: BorderSide.none),
-                  ),
-                  validator: controller.validator,
-                ),
-              ),
+              DropdownButtomWidget(itens: ["item 1", "item 2", "item 3"]),
+              // Container(
+              //   margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+              //   child: TextFormField(
+              //     textAlignVertical: TextAlignVertical.top,
+              //     textAlign: TextAlign.left,
+              //     decoration: InputDecoration(
+              //       fillColor: Color.fromRGBO(242, 242, 242, 1),
+              //       filled: true,
+              //       hintText: "Arroz",
+              //       contentPadding: EdgeInsets.only(left: 20, right: 20),
+              //       border: UnderlineInputBorder(
+              //           borderRadius: BorderRadius.circular(4),
+              //           borderSide: BorderSide.none),
+              //     ),
+              //     validator: controller.validator,
+              //   ),
+              // ),
               Container(
                 margin: EdgeInsets.only(left: 30, top: 10),
                 alignment: Alignment.centerLeft,

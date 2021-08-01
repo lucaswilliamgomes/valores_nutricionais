@@ -3,7 +3,6 @@ import 'package:valores_nutricionais/modules/informations_page/controllers/infor
 import 'package:valores_nutricionais/modules/informations_page/views/list_attributes.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 import 'package:valores_nutricionais/shared/themes/text_styles.dart';
-import 'package:valores_nutricionais/shared/widgets/list_tile_widget.dart';
 
 class InformationsPage extends StatefulWidget {
   @override
@@ -39,6 +38,7 @@ class _InformationsPageState extends State<InformationsPage> {
           Flexible(
             child: ListAttributes(
               attributes: controller.informations!['attributes'],
+              baseQty: 100,
             ),
           )
         ],
