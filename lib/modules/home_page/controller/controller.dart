@@ -7,11 +7,20 @@ class HomeController {
   HomeModel model = HomeModel();
   SearchInformations repository = SearchInformations();
 
-  searchFood(int food) => model.food = food;
-  searchWeight(double weight) => model.weight = weight;
-
   String? validator(String? value) =>
     value?.isEmpty ?? true ? "Este campo deve ser preenchido!" : null;
+
+  void onChange({
+    int? food,
+    double? weight
+
+  }) {
+    model = model.copyWith(
+      food: food,
+      weight: weight,
+    );
+    print(model);
+  }
   
   Future<bool> search() async {
     if (!homeFormKey.currentState!.validate()) {

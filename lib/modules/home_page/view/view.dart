@@ -16,106 +16,135 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: LayoutBuilder(builder: (context, constraints) {
-      final _height = constraints.maxHeight;
-      //final _width = constraints.maxWidth;
-      return Container(
-        alignment: Alignment.center,
-        color: AppColors.colorBackgroundLight,
-        child: Form(
-          key: controller.homeFormKey,
-            child: Column(children: [
-              Container(
-                margin: EdgeInsets.only(top: _height * .3, left: 30),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "ALIMENTO",
-                  style: TextStyle(
-                    color: AppColors.colorFont,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              DropdownButtomWidget(itens: ["item 1", "item 2", "item 3"]),
-              // Container(
-              //   margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-              //   child: TextFormField(
-              //     textAlignVertical: TextAlignVertical.top,
-              //     textAlign: TextAlign.left,
-              //     decoration: InputDecoration(
-              //       fillColor: Color.fromRGBO(242, 242, 242, 1),
-              //       filled: true,
-              //       hintText: "Arroz",
-              //       contentPadding: EdgeInsets.only(left: 20, right: 20),
-              //       border: UnderlineInputBorder(
-              //           borderRadius: BorderRadius.circular(4),
-              //           borderSide: BorderSide.none),
-              //     ),
-              //     validator: controller.validator,
-              //   ),
-              // ),
-              Container(
-                margin: EdgeInsets.only(left: 30, top: 10),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "QUANTIDADE EM GRAMAS",
-                  style: TextStyle(
-                    color: AppColors.colorFont,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-                child: TextFormField(
-                  textAlignVertical: TextAlignVertical.top,
-                  textAlign: TextAlign.left,
-                  decoration: InputDecoration(
-                    fillColor: Color.fromRGBO(242, 242, 242, 1),
-                    filled: true,
-                    hintText: "100",
-                    contentPadding: EdgeInsets.only(left: 20, right: 20),
-                    border: UnderlineInputBorder(
-                        borderRadius: BorderRadius.circular(4),
-                        borderSide: BorderSide.none),
-                  ),
-                  validator: controller.validator,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-                child: MaterialButton(
-                  height: 45,
-                  minWidth: 200,
+    return Scaffold(
+      body: LayoutBuilder(builder: (context, constraints) {
+        final _height = constraints.maxHeight;
+        //final _width = constraints.maxWidth;
+        return SingleChildScrollView(
+          child: Container(
+            alignment: Alignment.center,
+            color: AppColors.colorBackgroundLight,
+            child: Form(
+              key: controller.homeFormKey,
+              child: Column(children: [
+                Container(
+                  margin: EdgeInsets.only(top: _height * .3, left: 30),
+                  alignment: Alignment.centerLeft,
                   child: Text(
-                    "CONTINUAR",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                    "ALIMENTO",
+                    style: TextStyle(
+                      color: AppColors.colorFont,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                  color: AppColors.colorButtomDark,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4)),
-                  onPressed: () {
-                    setState(() {
-                 
-                      if (controller.homeFormKey.currentState!.validate()) {
-                        //final infoController = InformationsController();
-                        //infoController.teste();
-                        controller.homeFormKey.currentState!.save();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => InformationsPage()));
-                      }
-                    });
-                  },
                 ),
-              ),
-            ]),
+                DropdownButtomWidget(
+                  itens: [
+                    "item 1",
+                    "item 2",
+                    "item 3",
+                    "item 4",
+                    "item 5",
+                    "item 6",
+                    "base 1",
+                    "base 2",
+                    "base 3",
+                    "base 4",
+                    "base 5",
+                    "base 6",
+                    "base 7",
+                    "base 8",
+                    "base 9",
+                    "base 10",
+                    "base 11",
+                    "base 12",
+                  ],
+                  controller: controller,
+                ),
+                // Container(
+                //   margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+                //   child: TextFormField(
+                //     textAlignVertical: TextAlignVertical.top,
+                //     textAlign: TextAlign.left,
+                //     decoration: InputDecoration(
+                //       fillColor: Color.fromRGBO(242, 242, 242, 1),
+                //       filled: true,
+                //       hintText: "Arroz",
+                //       contentPadding: EdgeInsets.only(left: 20, right: 20),
+                //       border: UnderlineInputBorder(
+                //           borderRadius: BorderRadius.circular(4),
+                //           borderSide: BorderSide.none),
+                //     ),
+                //     validator: controller.validator,
+                //   ),
+                // ),
+                Container(
+                  margin: EdgeInsets.only(left: 30, top: 10),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "QUANTIDADE EM GRAMAS",
+                    style: TextStyle(
+                      color: AppColors.colorFont,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    textAlignVertical: TextAlignVertical.top,
+                    textAlign: TextAlign.left,
+                    decoration: InputDecoration(
+                      fillColor: Color.fromRGBO(242, 242, 242, 1),
+                      filled: true,
+                      hintText: "100",
+                      contentPadding: EdgeInsets.only(left: 20, right: 20),
+                      border: UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          borderSide: BorderSide.none),
+                    ),
+                    validator: controller.validator,
+                    onChanged: (value) {
+                      controller.onChange(weight: double.tryParse(value));
+                    },
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+                  child: MaterialButton(
+                    height: 45,
+                    minWidth: 200,
+                    child: Text(
+                      "CONTINUAR",
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                    ),
+                    color: AppColors.colorButtomDark,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4)),
+                    onPressed: () {
+                      setState(() {
+                        if (controller.homeFormKey.currentState!.validate()) {
+                          print(controller.homeFormKey.currentState);
+                          //final infoController = InformationsController();
+                          //infoController.teste();
+                          controller.homeFormKey.currentState!.save();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => InformationsPage()));
+                        }
+                      });
+                    },
+                  ),
+                ),
+              ]),
+            ),
           ),
-        
-      );
-    }));
+        );
+      }),
+    );
   }
 }
