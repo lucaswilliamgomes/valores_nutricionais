@@ -5,6 +5,9 @@ import 'package:valores_nutricionais/shared/themes/colors.dart';
 import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 
 class InformationsPage extends StatefulWidget {
+  final int index;
+
+  const InformationsPage({Key? key, required this.index}) : super(key: key);
   @override
   _InformationsPageState createState() => _InformationsPageState();
 }
@@ -51,7 +54,7 @@ class _InformationsPageState extends State<InformationsPage> {
       child: ElevatedButton(
         child: Text("Tente novamente"),
         onPressed: () {
-          controller.start();
+          controller.start(widget.index);
         },
       ),
     );
@@ -75,7 +78,7 @@ class _InformationsPageState extends State<InformationsPage> {
   @override
   void initState() {
     super.initState();
-    controller.start();
+    controller.start(widget.index);
   }
 
   @override

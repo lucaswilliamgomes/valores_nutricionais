@@ -10,16 +10,16 @@ class InformationsController {
   Map? informations = {};
 
   Future<Map> getFoodInformations(int index) async {
-    var url = Uri.parse('http://10.0.2.2:4000/api/v1/food/$index');
+    var url = Uri.parse('https://taco-food-api.herokuapp.com/api/v1/food/$index');
     var response = await http.get(url);
     final map = jsonDecode(response.body)[0];
     return map;
   }
 
-  Future start() async {
+  Future<void> start(int index) async {
     state.value = InfoState.loading;
     try {
-      informations = await getFoodInformations(1);
+      informations = await getFoodInformations(index);
       state.value = InfoState.sucess;
     } catch (e) {
       state.value = InfoState.error;

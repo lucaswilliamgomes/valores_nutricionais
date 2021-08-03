@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/splash": (context) => SplashPage(),
         "/home": (context) => HomePage(),
-        "/informations": (context) => InformationsPage(),
+        //"/informations": (context) => InformationsPage(),
       },
     );
   }

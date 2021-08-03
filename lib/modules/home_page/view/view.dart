@@ -15,13 +15,24 @@ class _HomePageState extends State<HomePage> {
   HomeController controller = HomeController();
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(builder: (context, constraints) {
-        final _height = constraints.maxHeight;
-        //final _width = constraints.maxWidth;
-        return SingleChildScrollView(
+  void initState() {
+    controller.start();
+    super.initState();
+  }
+
+    _loading() {
+    return Center(
+      child: CircularProgressIndicator(
+        color: AppColors.colorBackgroundDark,
+        strokeWidth: 2.2,
+      ),
+    );
+  }
+
+  _sucess(double _height) {
+    return SingleChildScrollView(
           child: Container(
+            height: _height,
             alignment: Alignment.center,
             color: AppColors.colorBackgroundLight,
             child: Form(
@@ -40,45 +51,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 DropdownButtomWidget(
-                  itens: [
-                    "item 1",
-                    "item 2",
-                    "item 3",
-                    "item 4",
-                    "item 5",
-                    "item 6",
-                    "base 1",
-                    "base 2",
-                    "base 3",
-                    "base 4",
-                    "base 5",
-                    "base 6",
-                    "base 7",
-                    "base 8",
-                    "base 9",
-                    "base 10",
-                    "base 11",
-                    "base 12",
-                  ],
+                  itens: controller.listFoods,
                   controller: controller,
                 ),
-                // Container(
-                //   margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-                //   child: TextFormField(
-                //     textAlignVertical: TextAlignVertical.top,
-                //     textAlign: TextAlign.left,
-                //     decoration: InputDecoration(
-                //       fillColor: Color.fromRGBO(242, 242, 242, 1),
-                //       filled: true,
-                //       hintText: "Arroz",
-                //       contentPadding: EdgeInsets.only(left: 20, right: 20),
-                //       border: UnderlineInputBorder(
-                //           borderRadius: BorderRadius.circular(4),
-                //           borderSide: BorderSide.none),
-                //     ),
-                //     validator: controller.validator,
-                //   ),
-                // ),
                 Container(
                   margin: EdgeInsets.only(left: 30, top: 10),
                   alignment: Alignment.centerLeft,
@@ -126,16 +101,7 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(4)),
                     onPressed: () {
                       setState(() {
-                        if (controller.homeFormKey.currentState!.validate()) {
-                          print(controller.homeFormKey.currentState);
-                          //final infoController = InformationsController();
-                          //infoController.teste();
-                          controller.homeFormKey.currentState!.save();
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => InformationsPage()));
-                        }
+                        controller.saveFormKey(controller, context);
                       });
                     },
                   ),
@@ -143,6 +109,47 @@ class _HomePageState extends State<HomePage> {
               ]),
             ),
           ),
+        );
+  }
+
+  _error() {
+    return Center(
+      child: ElevatedButton(
+        child: Text("Tente novamente"),
+        onPressed: () {
+          controller.start();
+        },
+      ),
+    );
+  }
+
+  _start() {
+    return Container();
+  }
+
+  stateManager(InfoStateHome state, double height) {
+    if (state == InfoStateHome.loading)
+      return _loading();
+    else if (state == InfoStateHome.sucess)
+      return _sucess(height);
+    else if (state == InfoStateHome.error)
+      return _error();
+    else
+      return _start();
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: LayoutBuilder(builder: (context, constraints) {
+        final height = constraints.maxHeight;
+        //final _width = constraints.maxWidth;
+        return ValueListenableBuilder(
+          valueListenable: controller.state,
+          builder: (BuildContext context, value, Widget? child) {
+            return stateManager(controller.state.value, height);
+          },
         );
       }),
     );

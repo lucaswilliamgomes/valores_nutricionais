@@ -1,9 +1,12 @@
-import 'package:valores_nutricionais/modules/home_page/models/model.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class SearchInformations {
-  // API connection
-  Future<bool> search(HomeModel data) async {
-    await Future.delayed(Duration(seconds: 1));
-    return true;
+
+  Future<List> searchListFood() async {
+    var url = Uri.parse('https://taco-food-api.herokuapp.com/api/v1/food/');
+    var response = await http.get(url);
+    final list = jsonDecode(response.body);
+    return list;
   }
 }

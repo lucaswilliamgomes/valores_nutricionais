@@ -13,7 +13,7 @@ class DropdownButtomWidget extends StatefulWidget {
 }
 
 class _DropdownButtomWidgetState extends State<DropdownButtomWidget> {
-  String selected = "item 1";
+  String selected = "Arroz, integral, cozido";
   
   @override
   Widget build(BuildContext context) {
