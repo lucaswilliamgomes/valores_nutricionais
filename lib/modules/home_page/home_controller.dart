@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:valores_nutricionais/modules/home_page/models/model.dart';
-import 'package:valores_nutricionais/modules/home_page/models/repository.dart';
-import 'package:valores_nutricionais/modules/informations_page/views/informations_view.dart';
+import 'package:valores_nutricionais/modules/home_page/models/home_model.dart';
+import 'package:valores_nutricionais/modules/home_page/models/home_repository.dart';
+import 'package:valores_nutricionais/modules/informations_page/informations_page.dart';
 
 enum InfoStateHome { start, loading, sucess, error }
 
@@ -54,7 +54,6 @@ class HomeController {
       for (var item in list) {
         listFoods.add(item['description']);
       }
-      print(listFoods);
       state.value = InfoStateHome.sucess;
     } catch (e) {
       state.value = InfoStateHome.error;

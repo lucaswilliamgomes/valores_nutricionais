@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:valores_nutricionais/modules/informations_page/controllers/informations_controller.dart';
-import 'package:valores_nutricionais/modules/informations_page/views/list_attributes.dart';
+import 'package:valores_nutricionais/modules/informations_page/informations_controller.dart';
+import 'package:valores_nutricionais/shared/widgets/list_attributes_widget.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 
