@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
   http: ^0.13.3
+  translator: ^0.1.7
 
 dev_dependencies:
   flutter_test:

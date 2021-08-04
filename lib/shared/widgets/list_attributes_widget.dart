@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valores_nutricionais/modules/informations_page/informations_controller.dart';
 import 'package:valores_nutricionais/shared/widgets/list_tile_widget.dart';
 
 class ListAttributes extends StatelessWidget {
@@ -13,14 +14,12 @@ class ListAttributes extends StatelessWidget {
 
   String treatmentDataQty(var data) {
     if (data == null || data is String) return 0.toStringAsFixed(2);
-    if (data is Map) {
-      return "is a map";
-    }
     return ((data / 100) * baseQty).toStringAsFixed(2);
   }
 
   @override
   Widget build(BuildContext context) {
+    InformationsController informationsController = InformationsController();
     attributes.remove("humidity");
     attributes.remove("fatty_acids");
     return ListView.builder(
@@ -28,7 +27,7 @@ class ListAttributes extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           String key = attributes.keys.elementAt(index);
           return ListTileWidget(
-            description: key,
+            description: informationsController.translations[key] == null ? key : informationsController.translations[key],
             baseQty: baseQty.toStringAsFixed(2),
             baseUnit: "g",
             resultQty: attributes[key]["qty"] == null
