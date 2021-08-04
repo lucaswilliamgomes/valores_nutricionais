@@ -2,7 +2,7 @@
     package="com.example.valores_nutricionais">
    <application
         android:label="valores_nutricionais"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -38,4 +38,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+  <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

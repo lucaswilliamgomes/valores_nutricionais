@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:valores_nutricionais/modules/home_page/view/view.dart';
-
 import 'package:valores_nutricionais/modules/splash_page/splash_page.dart';
 
 void main() {
