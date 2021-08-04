@@ -6,8 +6,10 @@ import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 
 class InformationsPage extends StatefulWidget {
   final int index;
+  final double weight;
 
-  const InformationsPage({Key? key, required this.index}) : super(key: key);
+  const InformationsPage({Key? key, required this.index, required this.weight})
+      : super(key: key);
   @override
   _InformationsPageState createState() => _InformationsPageState();
 }
@@ -41,7 +43,7 @@ class _InformationsPageState extends State<InformationsPage> {
           Flexible(
             child: ListAttributes(
               attributes: controller.informations!['attributes'],
-              baseQty: 100,
+              baseQty: widget.weight,
             ),
           )
         ],

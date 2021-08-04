@@ -39,7 +39,12 @@ class HomeController {
     formKey.currentState!.save();
 
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => InformationsPage(index: model.food == null ? 1 : model.food!+1,)));
+        context,
+        MaterialPageRoute(
+            builder: (context) => InformationsPage(
+                  index: model.food == null ? 1 : model.food! + 1,
+                  weight: model.weight!,
+                )));
   }
 
   Future<void> start() async {

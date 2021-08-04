@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:valores_nutricionais/modules/home_page/controller/controller.dart';
-import 'package:valores_nutricionais/modules/informations_page/controllers/informations_controller.dart';
-import 'package:valores_nutricionais/modules/informations_page/views/informations_view.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 import 'package:valores_nutricionais/shared/widgets/dropdownButton%20_widget.dart';
 
@@ -20,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-    _loading() {
+  _loading() {
     return Center(
       child: CircularProgressIndicator(
         color: AppColors.colorBackgroundDark,
@@ -31,85 +29,85 @@ class _HomePageState extends State<HomePage> {
 
   _sucess(double _height) {
     return SingleChildScrollView(
-          child: Container(
-            height: _height,
-            alignment: Alignment.center,
-            color: AppColors.colorBackgroundLight,
-            child: Form(
-              key: controller.homeFormKey,
-              child: Column(children: [
-                Container(
-                  margin: EdgeInsets.only(top: _height * .3, left: 30),
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "ALIMENTO",
-                    style: TextStyle(
-                      color: AppColors.colorFont,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+      child: Container(
+        height: _height,
+        alignment: Alignment.center,
+        color: AppColors.colorBackgroundLight,
+        child: Form(
+          key: controller.homeFormKey,
+          child: Column(children: [
+            Container(
+              margin: EdgeInsets.only(top: _height * .3, left: 30),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "ALIMENTO",
+                style: TextStyle(
+                  color: AppColors.colorFont,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
-                DropdownButtomWidget(
-                  itens: controller.listFoods,
-                  controller: controller,
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 30, top: 10),
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "QUANTIDADE EM GRAMAS",
-                    style: TextStyle(
-                      color: AppColors.colorFont,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    textAlignVertical: TextAlignVertical.top,
-                    textAlign: TextAlign.left,
-                    decoration: InputDecoration(
-                      fillColor: Color.fromRGBO(242, 242, 242, 1),
-                      filled: true,
-                      hintText: "100",
-                      contentPadding: EdgeInsets.only(left: 20, right: 20),
-                      border: UnderlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                          borderSide: BorderSide.none),
-                    ),
-                    validator: controller.validator,
-                    onChanged: (value) {
-                      controller.onChange(weight: double.tryParse(value));
-                    },
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-                  child: MaterialButton(
-                    height: 45,
-                    minWidth: 200,
-                    child: Text(
-                      "CONTINUAR",
-                      style: TextStyle(fontSize: 15, color: Colors.white),
-                    ),
-                    color: AppColors.colorButtomDark,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
-                    onPressed: () {
-                      setState(() {
-                        controller.saveFormKey(controller, context);
-                      });
-                    },
-                  ),
-                ),
-              ]),
+              ),
             ),
-          ),
-        );
+            DropdownButtomWidget(
+              itens: controller.listFoods,
+              controller: controller,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 30, top: 10),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "QUANTIDADE EM GRAMAS",
+                style: TextStyle(
+                  color: AppColors.colorFont,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                textAlignVertical: TextAlignVertical.top,
+                textAlign: TextAlign.left,
+                decoration: InputDecoration(
+                  fillColor: Color.fromRGBO(242, 242, 242, 1),
+                  filled: true,
+                  hintText: "100",
+                  contentPadding: EdgeInsets.only(left: 20, right: 20),
+                  border: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(4),
+                      borderSide: BorderSide.none),
+                ),
+                validator: controller.validator,
+                onChanged: (value) {
+                  controller.onChange(weight: double.tryParse(value));
+                },
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+              child: MaterialButton(
+                height: 45,
+                minWidth: 200,
+                child: Text(
+                  "OBTER INFORMAÇÕES",
+                  style: TextStyle(fontSize: 15, color: Colors.white),
+                ),
+                color: AppColors.colorButtomDark,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4)),
+                onPressed: () {
+                  setState(() {
+                    controller.saveFormKey(controller, context);
+                  });
+                },
+              ),
+            ),
+          ]),
+        ),
+      ),
+    );
   }
 
   _error() {
@@ -137,7 +135,6 @@ class _HomePageState extends State<HomePage> {
     else
       return _start();
   }
-
 
   @override
   Widget build(BuildContext context) {

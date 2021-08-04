@@ -16,11 +16,13 @@ class ListAttributes extends StatelessWidget {
     if (data is Map) {
       return "is a map";
     }
-    return data.toStringAsFixed(2);
+    return ((data / 100) * baseQty).toStringAsFixed(2);
   }
 
   @override
   Widget build(BuildContext context) {
+    attributes.remove("humidity");
+    attributes.remove("fatty_acids");
     return ListView.builder(
         itemCount: attributes.length,
         itemBuilder: (BuildContext context, int index) {
@@ -32,8 +34,9 @@ class ListAttributes extends StatelessWidget {
             resultQty: attributes[key]["qty"] == null
                 ? treatmentDataQty(attributes[key]["kcal"])
                 : treatmentDataQty(attributes[key]["qty"]),
-            resultUnit:
-                attributes[key]["unit"] == null ? "" : attributes[key]["unit"],
+            resultUnit: attributes[key]["unit"] == null
+                ? "kcal"
+                : attributes[key]["unit"],
           );
         });
   }

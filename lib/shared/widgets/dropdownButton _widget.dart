@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valores_nutricionais/modules/home_page/controller/controller.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
-import 'package:valores_nutricionais/shared/themes/text_styles.dart';
 
 class DropdownButtomWidget extends StatefulWidget {
   final HomeController controller;
