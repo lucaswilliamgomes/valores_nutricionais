@@ -23,5 +23,24 @@
 
 <h2 align="center">Instalando o app no seu dispositivo android 📱</h2>
 <p> 
-    Destro da pasta <a href="https://github.com/lucaswilliamgomes/valores_nutricionais/tree/main/apps">./apps</a> você pode encontrar 4 arquivos .apk, baixe e instale no seus dipositivo o arquivo app.apk, caso o aplicativo não seja instalado com sucesso (isso pode ocorrer pois existem diferentes arquiteturas de processadores) você pode testar os outros 3 arquivos disponibilizados.
+    No diretório <a href="https://github.com/lucaswilliamgomes/valores_nutricionais/tree/main/apps">./apps</a> você pode encontrar 4 arquivos .apk, baixe e instale no seus dipositivo o arquivo <strong>app.apk</strong>.<br>Caso o aplicativo não seja instalado com sucesso (isso pode ocorrer pois existem diferentes arquiteturas de processadores), você pode testar os outros 3 arquivos disponibilizados.
 </p>
+
+--- 
+
+<h2 align="center">Executando a aplicação 💻</h2>
+
+   ```Bash
+   - Clone esse repositório:
+   $ git clone https://github.com/lucaswilliamgomes/valores_nutricionais.git
+
+   - Entre no diretório:
+   $ cd valores_nutricionais
+
+   - Instale as dependências:
+   $ flutter pub get
+
+   - Inicie o app: 
+   $ flutter run
+   ```
+   
