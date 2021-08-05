@@ -16,5 +16,12 @@
 </p>
 
 <p>
-    Pensando nisso, resolvi trazer essas informações nutricionais presentes na <a href="https://github.com/raulfdm/taco-api">TACO API</a> de forma mais cômoda, através de um aplicativo disponivel atualmente apenas para android.
+    Pensando nisso, e também em busca de uma ideia para me desafiar a aprender mais sobre Flutter, resolvi trazer essas informações nutricionais presentes na <a href="https://github.com/raulfdm/taco-api">TACO API</a> de forma mais cômoda, através de um aplicativo android.
+</p>
+
+---
+
+<h2 align="center">Instalando o app no seu dispositivo android 📱</h2>
+<p> 
+    Destro da pasta <a href="https://github.com/lucaswilliamgomes/valores_nutricionais/tree/main/apps">./apps</a> você pode encontrar 4 arquivos .apk, baixe e instale no seus dipositivo o arquivo app.apk, caso o aplicativo não seja instalado com sucesso (isso pode ocorrer pois existem diferentes arquiteturas de processadores) você pode testar os outros 3 arquivos disponibilizados.
 </p>
