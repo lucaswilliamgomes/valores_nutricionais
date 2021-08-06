@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:valores_nutricionais/modules/home_page/home_controller.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
-import 'package:dropdown_search/dropdown_search.dart';
-import 'package:searchable_dropdown/searchable_dropdown.dart';
 
 class DropdownButtomWidget extends StatefulWidget {
   final HomeController controller;
@@ -29,7 +28,8 @@ class _DropdownButtomWidgetState extends State<DropdownButtomWidget> {
           borderRadius: BorderRadius.circular(4),
         ),
         child: SearchableDropdown.single(
-          value: null,
+          validator: widget.controller.validatorFood,
+          value: selected,
           style: TextStyle(
             color: AppColors.colorFont,
             fontSize: 15,
@@ -48,7 +48,7 @@ class _DropdownButtomWidgetState extends State<DropdownButtomWidget> {
               widget.controller.onChange(food: widget.itens.indexOf(newValue));
             });
           },
-          searchHint: null,
+          closeButton: "Fechar",
           dialogBox: false,
           hint: Text("Selecione um alimento"),
           isExpanded: true,

@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(4),
                         borderSide: BorderSide.none),
                   ),
-                  validator: controller.validator,
+                  validator: controller.validatorQty,
                   onChanged: (value) {
                     controller.onChange(weight: double.tryParse(value));
                   },

@@ -13,8 +13,17 @@ class HomeController {
 
   List<String> listFoods = [];
 
-  String? validator(String? value) =>
-      value?.isEmpty ?? true ? "Este campo deve ser preenchido!" : null;
+  String? validatorQty(String? value) {
+    if (value?.isEmpty == true || value == null) return "Este campo deve ser preenchido!";
+    if (double.tryParse(value) == null) {
+      return "Valor inválido!";
+    }
+  }
+
+  String? validatorFood(String? value) {
+    if (value?.isEmpty == true || value == null) return "Este campo deve ser preenchido!";
+  }
+      
 
   void onChange({int? food, double? weight}) {
     model = model.copyWith(
