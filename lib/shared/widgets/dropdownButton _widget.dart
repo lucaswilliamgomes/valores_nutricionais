@@ -20,41 +20,41 @@ class _DropdownButtomWidgetState extends State<DropdownButtomWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: Alignment.centerLeft,
-        margin: EdgeInsets.only(top: 10, right: 30, left: 30),
-        padding: EdgeInsets.only(left: 10),
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(242, 242, 242, 1),
-          borderRadius: BorderRadius.circular(4),
+      alignment: Alignment.centerLeft,
+      margin: EdgeInsets.only(top: 10, right: 30, left: 30),
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(242, 242, 242, 1),
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: SearchableDropdown.single(
+        validator: widget.controller.validatorFood,
+        value: selected,
+        style: TextStyle(
+          color: AppColors.colorFont,
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
         ),
-        child: SearchableDropdown.single(
-          validator: widget.controller.validatorFood,
-          value: selected,
-          style: TextStyle(
-            color: AppColors.colorFont,
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
-          ),
-          items: widget.itens
-              .map<DropdownMenuItem<String>>(
-                  (String element) => DropdownMenuItem(
-                        child: Text(element),
-                        value: element,
-                      ))
-              .toList(),
-          onChanged: (String? newValue) {
-            setState(() {
-              selected = newValue!;
-              widget.controller.onChange(food: widget.itens.indexOf(newValue));
-            });
-          },
-          closeButton: "Fechar",
-          dialogBox: false,
-          hint: Text("Selecione um alimento"),
-          isExpanded: true,
-          menuConstraints: BoxConstraints.tight(Size.fromHeight(300)),
-          displayClearIcon: false,
-          underline: Container(),
-        ));
+        items: widget.itens
+            .map<DropdownMenuItem<String>>((String element) => DropdownMenuItem(
+                  child: Text(element),
+                  value: element,
+                ))
+            .toList(),
+        onChanged: (String? newValue) {
+          setState(() {
+            selected = newValue!;
+            widget.controller.onChange(food: widget.itens.indexOf(newValue));
+          });
+        },
+        closeButton: "Fechar",
+        dialogBox: false,
+        hint: Text("Selecione um alimento"),
+        isExpanded: true,
+        menuConstraints: BoxConstraints.tight(Size.fromHeight(300)),
+        displayClearIcon: false,
+        underline: Container(),
+      ),
+    );
   }
 }
