@@ -36,7 +36,7 @@ class InformationsController {
 
   Future<Map> getFoodInformations(int index) async {
     var url =
-        Uri.parse('https://taco-food-api.herokuapp.com/api/v1/food/$index');
+        Uri.parse('https://taco-api-lucas.herokuapp.com/api/v1/food/$index');
     var response = await http.get(url);
     final map = jsonDecode(response.body)[0];
     return map;

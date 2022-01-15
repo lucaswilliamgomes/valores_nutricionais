@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:searchable_dropdown/searchable_dropdown.dart';
+import 'package:search_choices/search_choices.dart';
 import 'package:valores_nutricionais/modules/home_page/home_controller.dart';
 import 'package:valores_nutricionais/shared/themes/colors.dart';
 
@@ -27,7 +27,7 @@ class _DropdownButtomWidgetState extends State<DropdownButtomWidget> {
         color: Color.fromRGBO(242, 242, 242, 1),
         borderRadius: BorderRadius.circular(4),
       ),
-      child: SearchableDropdown.single(
+      child: SearchChoices.single(
         validator: widget.controller.validatorFood,
         value: selected,
         style: TextStyle(

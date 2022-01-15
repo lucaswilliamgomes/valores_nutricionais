@@ -65,6 +65,7 @@ class HomeController {
       }
       state.value = InfoStateHome.sucess;
     } catch (e) {
+      print(e.toString());
       state.value = InfoStateHome.error;
     }
   }
