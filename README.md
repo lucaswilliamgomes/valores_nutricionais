@@ -35,7 +35,7 @@
 
 <h2 align="center">Instalando o app no seu dispositivo android 📱</h2>
 <p> 
-    No diretório <a href="https://github.com/lucaswilliamgomes/valores_nutricionais/tree/main/apps">./apps</a> você pode encontrar 4 arquivos .apk, baixe e instale no seus dipositivo o arquivo <strong>app.apk</strong>.<br>Caso o aplicativo não seja instalado com sucesso (isso pode ocorrer pois existem diferentes arquiteturas de processadores), você pode testar os outros 3 arquivos disponibilizados.
+    No diretório <a href="https://github.com/lucaswilliamgomes/valores_nutricionais/tree/main/apps">./apps</a> você pode encontrar 3 arquivos .apk, baixe e instale no seus dipositivo o arquivo <strong>app-arm64-v8a-release.apk</strong>.<br>Caso o aplicativo não seja instalado com sucesso (isso pode ocorrer pois existem diferentes arquiteturas de processadores), você pode testar os outros 2 arquivos disponibilizados.
 </p>
 
 --- 
@@ -53,7 +53,7 @@
    $ flutter pub get
 
    - Inicie o app: 
-   $ flutter run --no-sound-null-safety
+   $ flutter run
    ```
    
 
