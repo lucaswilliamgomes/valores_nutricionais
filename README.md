@@ -23,7 +23,7 @@
 <h2 align="center">Funcionalidades do APP 📲</h2>
 
 
-- [x] Conecção com a API (Deploy no Heroku)
+- [x] Conexão com a API (Deploy no Heroku)
 - [x] Pesquisa de alimentos por nome
 - [x] Busca informações por peso do alimento
 - [ ] Tema escuro
